@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ratingScore = document.querySelector('#rrID');
     let progressBar = document.querySelector('.progress-active-bar');
     let barWidthValue = 0;
+    let passiveEarning = 5;
     let credits = 1000;
     let creditPower = 50;
     let creditsScore = document.querySelector('#creditsID');
@@ -192,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         agentTransformation();
         v1.play();
     })
+    passiveEarningFunc();
     let buyBtns = document.querySelectorAll('.upgrade-buy-btn');
     buyBtns.forEach(el => el.addEventListener('mouseenter', () => {
         hover.volume = 0.5;
@@ -304,10 +306,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let agentCounter = 0;
     let currentAgentSprite;
     let currentAgentProfile;
+    let passiveEarningBuff = 3;
+    function passiveEarningFunc() {
+        setInterval(() => {
+            barWidthValue = (rating * barMaxLength) / rankValue;
+            rating += passiveEarning;
+            ratingScore.textContent = rating;
+            progressBarRank();
+            agentTransformationChecker();
+            agentTransformation();
+            rankUpChecker();
+            currentRank();
+        }, 1000)
+    }
     function agentTransformationChecker() {
         setInterval(() => {
             if (rating >= transformPoints) {
                 agentCounter++;
+                passiveEarning *= passiveEarningBuff
                 currentAgentSprite = `<img src = "assets/images/${agents[agentCounter]}Game.png">`;
                 currentAgentProfile = `<img src = "assets/images/${agents[agentCounter]}Profile.png">`;
                 transformPoints *= 3;
@@ -322,4 +338,19 @@ document.addEventListener('DOMContentLoaded', () => {
             agentProfile.innerHTML = `${currentAgentProfile} <h2>Агент: <span style="color: ${agentsColors[agentCounter]}">${agentsNames[agentCounter]}</span></h2>`
         }
     }
+    let tooltipBtn = document.querySelector('#tooltipID');
+    let agentTooltip = document.querySelector('.agent-tooltip');
+    let tooltip = document.createElement('div');
+    setInterval(() => {
+        tooltipBtn.addEventListener('mouseenter', () => {
+            tooltip.style.display = `flex`;
+            tooltip.className = "tooltip";
+            tooltip.innerHTML = `<p>Пассивный доход: ${passiveEarning}</p>`;
+            agentTooltip.appendChild(tooltip);
+            hover.play();
+        })
+        tooltipBtn.addEventListener('mouseleave', () => {
+            tooltip.style.display = `none`;
+        })
+    }, 20)
 })

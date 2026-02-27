@@ -203,6 +203,7 @@ h1{
 }
 .agent-tooltip{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     background: #1B1B1B;
@@ -315,6 +316,21 @@ h1{
 }
 #leave-btn:hover{
     opacity: 0.7;
+}
+.tooltip{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50px;
+    background: black;
+    p{
+        font-size: 12px;
+        color: white;
+        font-weight: 400;
+    }
 }
 @keyframes agentSprite{
     from{
