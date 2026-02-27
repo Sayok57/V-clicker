@@ -170,6 +170,7 @@ h1{
 }
 .agent-sprite-container{
     cursor: url('../assets/images/crosshairCursor.svg'), auto;
+    user-select: none;
     display: flex;
     width: fit-content;
     height: fit-content;

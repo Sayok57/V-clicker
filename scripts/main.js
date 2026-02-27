@@ -86,9 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let knifePriceValue = 30000;
     const knifePowerBuff = 2000;
     const knifeCreditsBuff = 1500;
-    function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
     let rankIcon = document.querySelector('#rankIconID');
     let rankUpCounter = 0;
     const rankIcons = ["iron3rank", "bronzeIcon", "silverIcon", "goldIcon", "platinumIcon", "diamondIcon", "ascendentIcon", "immortalIcon", "radiantIcon"];
@@ -202,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }))
     buyClassicBtn.addEventListener('click', () => {
         if (credits >= classicPriceValue) {
+            buy.currentTime = 0;
             credits -= classicPriceValue;
             creditsScore.textContent = credits;
             power += classicPowerBuff;
@@ -213,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     buySheriffBtn.addEventListener('click', () => {
         if (credits >= sheriffPriceValue) {
+            buy.currentTime = 0;
             credits -= sheriffPriceValue;
             creditsScore.textContent = credits;
             power += sheriffPowerBuff;
@@ -224,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     buySpectreBtn.addEventListener('click', () => {
         if (credits >= spectrePriceValue) {
+            buy.currentTime = 0;
             credits -= spectrePriceValue;
             creditsScore.textContent = credits;
             power += spectrePowerBuff;
@@ -236,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     buyMarshalBtn.addEventListener('click', () => {
         if (credits >= marshalPriceValue) {
+            buy.currentTime = 0;
             credits -= marshalPriceValue;
             creditsScore.textContent = credits;
             power += marshalPowerBuff;
@@ -248,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     buyVandalBtn.addEventListener('click', () => {
         if (credits >= vandalPriceValue) {
+            buy.currentTime = 0;
             credits -= vandalPriceValue;
             creditsScore.textContent = credits;
             power += vandalPowerBuff;
@@ -260,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     buyOperatorBtn.addEventListener('click', () => {
         if (credits >= operatorPriceValue) {
+            buy.currentTime = 0;
             credits -= operatorPriceValue;
             creditsScore.textContent = credits;
             power += operatorPowerBuff;
@@ -272,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     buyKnifeBtn.addEventListener('click', () => {
         if (credits >= knifePriceValue) {
+            buy.currentTime = 0;
             credits -= knifePriceValue;
             creditsScore.textContent = credits;
             power += knifePowerBuff;
@@ -307,9 +311,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentAgentSprite = `<img src = "assets/images/${agents[agentCounter]}Game.png">`;
                 currentAgentProfile = `<img src = "assets/images/${agents[agentCounter]}Profile.png">`;
                 transformPoints *= 3;
+                newAgentSound.play();
             }
         }, 20)
     }
+    let newAgentSound = new Audio('assets/audio/newAgent.mp3');
     function agentTransformation() {
         if (agentCounter > 0 && agentCounter < 12) {
             player.innerHTML = currentAgentSprite;
