@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/main.js" defer></script>
+    <link rel = "icon" href="assets/images/favIcon.svg">
+    <title>V clicker</title>
+</head>
+
+<body>
+    <div class="lobby-screen">
+        <div class="lobby-content-container">
+            <div class="banner-container">
+                <div class="banner-logo">
+                </div>
+                <div class="banner-text">
+                    <h1>Кликер</h1>
+                    <p>Путь до радианта</p>
+                </div>
+            </div>
+            <div class="start-btn" id="play-btn">
+                <p>Начать</p>
+            </div>
+        </div>
+    </div>
+    <div class="game-screen">
+        <div class="nav-container">
+            <div class="nav-logo"></div>
+            <div class="nav-bar">
+                <p>Профиль</p>
+                <p>Настройки</p>
+                <p id = "leave-btn">Выход</p>
+            </div>
+        </div>
+        <div class="middle-game-content">
+            <div class="rank-container">
+                <div class="rank-row">
+                    <h1>Ранг:</h1>
+                    <div id="rankIconID">
+                        <img src="assets/images/iron3rank.svg">
+                    </div>
+                </div>
+                <div class="rank-progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-active-bar"></div>
+                    </div>
+                    <p><span id="rrID">0</span> рри</p>
+                </div>
+            </div>
+            <div class="agent-sprite-container">
+                <img src="assets/images/sageGame.png">
+            </div>
+        </div>
+        <div class="agent-profile-container">
+            <div class="agent-profile-box">
+                <img src="assets/images/sageProflie.png">
+                <h2>Агент: <span style="color: #00FFE1">Сейдж</span></h2>
+            </div>
+            <div class="agent-tooltip">
+                <p>?</p>
+            </div>
+        </div>
+        <div class="upgrade-menu-container">
+            <div class="credits-menu">
+                <img src="assets/images/creditsIcon.svg">
+                <p>Кредиты: <span id="creditsID">1000</span></p>
+            </div>
+            <div class="upgrade-menu-box">
+                <div class="upgrade-container">
+                    <h2>Классик <br> <span class="upgradePrice"><span style="color:greenyellow"
+                                id="classicPriceID">50</span> кредитов</span></h2>
+                    <div class="upgrade-box">
+                        <div class="upgrade-img-and-btn-container">
+                            <div class="upgrade-img-box"></div>
+                            <div class="upgrade-buy-btn" id="buyClassicBtn">
+                                <p>Купить</p>
+                            </div>
+                        </div>
+                        <div class="upgrade-info">
+                            <p>+5 к скиллу <br> +10 к скорости добычи кредитов</p>
+                        </div>
+                    </div>
+                    <h2>Шериф <br><span class="upgradePrice"><span style="color:greenyellow"
+                                id="sheriffPriceID">200</span> кредитов</span> </h2>
+                    <div class="upgrade-box">
+                        <div class="upgrade-img-and-btn-container">
+                            <div class="upgrade-img-box"></div>
+                            <div class="upgrade-buy-btn" id="buySheriffBtn">
+                                <p>Купить</p>
+                            </div>
+                        </div>
+                        <div class="upgrade-info">
+                            <p>+25 к скиллу <br> +30 к скорости добычи кредитов</p>
+                        </div>
+                    </div>
+                    <h2>Спектр <br><span class="upgradePrice"><span style="color:greenyellow"
+                                id="spectrePriceID">1000</span> кредитов</span> </h2>
+                    <div class="upgrade-box">
+                        <div class="upgrade-img-and-btn-container">
+                            <div class="upgrade-img-box"></div>
+                            <div class="upgrade-buy-btn" id="buySpectreBtn">
+                                <p>Купить</p>
+                            </div>
+                        </div>
+                        <div class="upgrade-info">
+                            <p>+100 к скиллу <br> +100 к скорости добычи кредитов</p>
+                        </div>
+                    </div>
+                    <h2>Маршал<br><span class="upgradePrice"><span style="color:greenyellow"
+                                id="marshalPriceID">3000</span> кредитов</span> </h2>
+                    <div class="upgrade-box">
+                        <div class="upgrade-img-and-btn-container">
+                            <div class="upgrade-img-box"></div>
+                            <div class="upgrade-buy-btn" id="buyMarshalBtn">
+                                <p>Купить</p>
+                            </div>
+                        </div>
+                        <div class="upgrade-info">
+                            <p>+250 к скиллу <br> +200 к скорости добычи кредитов</p>
+                        </div>
+                    </div>
+                    <h2>Вандал <br><span class="upgradePrice"><span style="color:greenyellow"
+                                id="vandalPriceID">8000</span> кредитов</span> </h2>
+                    <div class="upgrade-box">
+                        <div class="upgrade-img-and-btn-container">
+                            <div class="upgrade-img-box"></div>
+                            <div class="upgrade-buy-btn" id="buyVandalBtn">
+                                <p>Купить</p>
+                            </div>
+                        </div>
+                        <div class="upgrade-info">
+                            <p>+500 к скиллу <br> +400 к скорости добычи кредитов</p>
+                        </div>
+                    </div>
+                    <h2>Оператор <br><span class="upgradePrice"><span style="color:greenyellow"
+                                id="operatorPriceID">15000</span> кредитов</span> </h2>
+                    <div class="upgrade-box">
+                        <div class="upgrade-img-and-btn-container">
+                            <div class="upgrade-img-box"></div>
+                            <div class="upgrade-buy-btn" id="buyOperatorBtn">
+                                <p>Купить</p>
+                            </div>
+                        </div>
+                        <div class="upgrade-info">
+                            <p>+1000 к скиллу <br> +800 к скорости добычи кредитов</p>
+                        </div>
+                    </div>
+                    <h2>Нож <br><span class="upgradePrice"><span style="color:greenyellow"
+                                id="knifePriceID">30000</span> кредитов</span> </h2>
+                    <div class="upgrade-box">
+                        <div class="upgrade-img-and-btn-container">
+                            <div class="upgrade-img-box"></div>
+                            <div class="upgrade-buy-btn" id="buyKnifeBtn">
+                                <p>Купить</p>
+                            </div>
+                        </div>
+                        <div class="upgrade-info">
+                            <p>+2000 к скиллу <br> +1500 к скорости добычи кредитов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

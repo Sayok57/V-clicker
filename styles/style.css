@@ -1,0 +1,330 @@
+@import url('reset.css');
+@import url('fonts.css');
+body{
+    overflow: hidden;
+}
+p{
+    user-select: none;
+}
+h2{
+    user-select: none;
+}
+h1{
+    user-select: none;
+}
+.lobby-screen{
+    background-color: #262626;
+    background-image: url('../assets/images/bg.png');
+    background-size: 100vw;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.lobby-content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: fit-content;
+    align-items: center;
+}
+.banner-container{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 800px;
+    gap: 2vw;
+}
+.banner-logo{
+    background-image: url('../assets/images/logoo.png');
+    background-size: 193px 198px;
+    width: 200px;
+    height: 200px;
+}
+.banner-text{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    color: 200px;
+    h1{
+        color: white;
+        font-size: 128px;
+        font-weight: 400;
+    }
+    p{
+        background: linear-gradient(to right, #FF4655, red);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: 24px;
+        font-weight: 400;
+    }
+}
+.start-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    background: linear-gradient(to right, #FF4655, red);
+    p{
+        padding-top: 1vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-bottom: 1vw;
+        font-size: 32px;
+        color: white;
+        font-weight: 400;
+    }
+}
+.game-screen{
+    background-image: url('../assets/images/gameBg.png');
+    background-size: 100vw;
+    background-color: #262626;
+    width: 100vw;
+    height: 100vh;
+    display: inherit;
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    gap: 25vw;
+    padding-top: 6px;
+    padding-left: 25px;
+}
+.nav-logo{
+    background-image: url('../assets/images/gameLogo.png');
+    background-size: 252px 57px;
+    width: 252px;
+    height: 57px;
+}
+.nav-bar{
+    display: flex;
+    gap: 45px;
+     p{
+        font-size: 16px;
+        color: white;
+        font-weight: 400;
+    }
+}
+.middle-game-content{
+    position: absolute;
+    left: 40vw;
+    top: 10vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: 80vh;
+    gap: 26px;
+}
+.rank-container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 150px;
+    gap: 10px;
+}
+.rank-row{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    h1{
+        font-size: 64px;
+        color: white;
+        font-weight: 700;
+    }
+}
+#rankIconID{
+    transform: scale(0.8);
+}
+.rank-progress-container{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    p{
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+.progress-bar{
+    display: flex;
+    position: relative;
+    height: 10px;
+    width: 360px;
+    background: black;
+    border-radius: 40px;
+}
+.progress-active-bar{
+    position: absolute;
+    display: flex;
+    height: 10px;
+    width: 0px;
+    background: #74FFAA;
+    border-radius: 40px;
+}
+.agent-sprite-container{
+    cursor: url('../assets/images/crosshairCursor.svg'), auto;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    animation: agentSprite 1s infinite;
+}
+.agent-profile-container{
+    left: 27px;
+    top: 30vh;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.agent-profile-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: #1B1B1B;
+    border: 2px solid white;
+    gap: 10px;
+    h2{
+        font-size: 32px;
+        color: white;
+        font-weight: 400;
+    }
+}
+.agent-tooltip{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1B1B1B;
+    border: 2px solid white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    p{
+        font-weight: 700;
+        color: white;
+        font-size: 40px;
+    }
+}
+.upgrade-menu-container{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 425px;
+}
+.credits-menu{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    width: 425px;
+    height: 8vh;
+    p{
+        color: white;
+        font-weight: 400;
+        font-size: 24px;
+    }
+}
+.upgradePrice{
+    font-size: 16px;
+    font-weight: 400;
+}
+.upgrade-menu-box{
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #262626;
+    border: 2px solid white;
+    padding-top: 40px;
+}
+.upgrade-container{
+    display: flex;
+    flex-direction: column;
+    h2{
+        padding-left: 12px;
+        font-size: 20px;
+        color: white;
+        font-weight: 700;
+    }
+}
+.upgrade-box{
+    padding: 12px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    width: 420px;
+    height: 200px;
+    background: #171717;
+}
+.upgrade-img-and-btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.upgrade-img-box{
+    display: flex;
+    width: 130px;
+    height: 130px;
+    background: gray;
+}
+.upgrade-buy-btn{
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    width: 130px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #FF4655, red);
+    p{
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+.upgrade-info{
+    p{
+        font-size: 12px;
+        font-weight: 400;
+        color: #B5B5B5;
+    }
+}
+.upgrade-buy-btn:hover{
+    transform: scale(1.05);
+}
+.start-btn:hover{
+    transform: scale(1.05);
+}
+#leave-btn:hover{
+    opacity: 0.7;
+}
+@keyframes agentSprite{
+    from{
+        transform: scale();
+    }
+    51%{
+        transform: scale(1.1);
+    }
+    to{
+        transform: scale();
+    }
+}
+
+
