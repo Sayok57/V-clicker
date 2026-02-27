@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltipBtn.addEventListener('mouseenter', () => {
             tooltip.style.display = `flex`;
             tooltip.className = "tooltip";
-            tooltip.innerHTML = `<p>Пассивный доход: ${passiveEarning}</p>`;
+            tooltip.innerHTML = `<p>Пассивный скилл: ${passiveEarning}</p>`;
             agentTooltip.appendChild(tooltip);
             hover.play();
         })
